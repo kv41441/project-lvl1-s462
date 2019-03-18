@@ -1,0 +1,29 @@
+{
+  "name": "brain_games_41441",
+  "version": "0.0.1",
+  "description": "The first project of the Front-end JS Programmer profession at Hexlet.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sithari41441/project-lvl1-s462.git"
+  },
+  "keywords": [
+    "brain",
+    "games"
+  ],
+  "author": "sithari41441",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sithari41441/project-lvl1-s462/issues"
+  },
+  "homepage": "https://github.com/sithari41441/project-lvl1-s462#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4"
+  }
+}
