@@ -1,74 +1,47 @@
+// Engine of all package's games
+
 import readlineSync from 'readline-sync';
 
-const getUserName = () => readlineSync.question('May I have your name? ');
-
-const showGameRules = () => console.log('Answer "yes" if number even otherwise answer "no"\n');
-
-const showGreetings = () => {
+export const showGreetings = (gameRules) => {
   console.log('Welcome to the Brain Games!');
 
-  showGameRules();
+  console.log(gameRules);
 
-  const userName = getUserName();
+  const userName = readlineSync.question('May I have your name? ');
 
   console.log(`Hello, ${userName}\n`);
 
   return userName;
 };
 
-const showQuestion = () => {
-  const number = Math.floor(Math.random() * 100 + 1);
-
-  console.log(`Question: ${number}`);
-
-  return number;
-};
-
-const getAnswer = () => readlineSync.question('Your answer: ');
-
-const showCongratulations = userName => console.log(`Congratulatons, ${userName}!`);
-
-const checkParity = num => num % 2 === 0;
-
-const showCorrectAnswerMessage = () => console.log('Correct!');
-
-const correctAnswerForEven = (num) => {
-  if (checkParity(num)) {
-    return 'yes';
-  }
-  return 'no';
-};
-
-const showIncorrectAnswerMessage = (answer, rightAnswer, userName) => {
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.
-Let's try again, ${userName}!`);
-};
-
 const showAnswer = (answer, rightAnswer, userName) => {
   if (answer === rightAnswer) {
-    showCorrectAnswerMessage();
+    console.log('Correct!');
     return true;
   }
-  showIncorrectAnswerMessage(answer, rightAnswer, userName);
+  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.
+Let's try again, ${userName}!`);
   return false;
 };
 
-export const playGameEven = (userName) => {
+const playGame = (gameRules, showQuestion, getCorrectAnswer) => {
   const gameIterationsCount = 3;
+  const userName = showGreetings(gameRules);
 
   for (let i = 1, result = true; i <= gameIterationsCount; i += 1) {
     if (result) {
       const question = showQuestion();
-      const answer = getAnswer();
-      const rightAnswer = correctAnswerForEven(question);
+      const answer = readlineSync.question('Your answer: ');
+      const rightAnswer = getCorrectAnswer(question);
       result = showAnswer(answer, rightAnswer, userName);
     } else {
       break;
     }
+    // Будет переделано через return
     if (i === gameIterationsCount && result) {
-      showCongratulations(userName);
+      console.log(`Congratulatons, ${userName}!`);
     }
   }
 };
 
-export default showGreetings;
+export default playGame;

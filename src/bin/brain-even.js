@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-import showGreetings, { playGameEven } from '..';
+import playEven from '../games/even';
 
-const userName = showGreetings();
-
-playGameEven(userName);
+playEven();
