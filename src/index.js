@@ -30,39 +30,42 @@ const showCongratulations = userName => console.log(`Congratulatons, ${userName}
 
 const checkParity = num => num % 2 === 0;
 
-const handleCorrectAnswer = () => console.log('Correct!');
+const showCorrectAnswerMessage = () => console.log('Correct!');
 
-// Доработать через regexp, чтобы читал "yes" и "no" в любом регистре.
-const handleIncorrectAnswer = (answer, num, userName) => {
-  const rightAnswer = checkParity(num) ? 'yes' : 'no';
+const correctAnswerForEven = (num) => {
+  if (checkParity(num)) {
+    return 'yes';
+  }
+  return 'no';
+};
 
+const showIncorrectAnswerMessage = (answer, rightAnswer, userName) => {
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.
 Let's try again, ${userName}!`);
 };
 
-const checkAnswer = (answer, num, userName) => {
-  if (answer === 'yes' && checkParity(num)) {
-    handleCorrectAnswer();
+const showAnswer = (answer, rightAnswer, userName) => {
+  if (answer === rightAnswer) {
+    showCorrectAnswerMessage();
     return true;
   }
-  if (answer === 'no' && !checkParity(num)) {
-    handleCorrectAnswer();
-    return true;
-  }
-  handleIncorrectAnswer(answer, num, userName);
+  showIncorrectAnswerMessage(answer, rightAnswer, userName);
   return false;
 };
 
-export const playGameEven = (userName, iterationsCount) => {
-  for (let i = 1, result = true; i <= iterationsCount; i += 1) {
+export const playGameEven = (userName) => {
+  const gameIterationsCount = 3;
+
+  for (let i = 1, result = true; i <= gameIterationsCount; i += 1) {
     if (result) {
       const question = showQuestion();
       const answer = getAnswer();
-      result = checkAnswer(answer, question, userName);
+      const rightAnswer = correctAnswerForEven(question);
+      result = showAnswer(answer, rightAnswer, userName);
     } else {
       break;
     }
-    if (i === iterationsCount && result) {
+    if (i === gameIterationsCount && result) {
       showCongratulations(userName);
     }
   }
