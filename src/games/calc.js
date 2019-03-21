@@ -3,7 +3,7 @@
 import playGame from '..';
 import getRandomNumber from '../utils';
 
-const evenRules = 'What is the result of the expression?\n';
+const calcDescription = 'What is the result of the expression?\n';
 
 const showQuestion = () => {
   const number1 = getRandomNumber(100);
@@ -33,6 +33,6 @@ const showQuestion = () => {
   return String(question);
 };
 
-const playCalc = () => playGame(evenRules, showQuestion);
+const playCalc = () => playGame(calcDescription, showQuestion);
 
 export default playCalc;
