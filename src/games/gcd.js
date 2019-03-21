@@ -6,40 +6,29 @@ import getRandomNumber from '../utils';
 const gcdDescription = 'Find the greatest common divisor of given numbers.\n';
 
 const getGreatestCommonDivider = (num1, num2) => {
-  // О - оптимизация. Начало.
-  if (num1 === num2) {
-    return num1;
-  }
-  if (num1 % num2 === 0) {
-    return num2;
-  }
-  if (num2 % num1 === 0) {
-    return num1;
-  }
+  let number1 = num1;
+  let number2 = num2;
 
-  const iter = (number1, number2, acc) => {
-    if (num1 % acc === 0 && num2 % acc === 0) {
-      return acc;
+  while (number1 !== 0 && number2 !== 0) {
+    if (number1 > number2) {
+      number1 %= number2;
+    } else {
+      number2 %= number1;
     }
-    return iter(number1, number2, acc - 1);
-  };
-
-  if (num1 > num2) {
-    return iter(num1, num2, Math.floor(num2 / 2 + 1)); // О - оптимизация. Продолжение.
   }
-  return iter(num1, num2, Math.floor(num1 / 2 + 1));
+
+  return number1 + number2;
 };
 
-const showQuestion = () => {
-  const number1 = getRandomNumber(100);
-  const number2 = getRandomNumber(100);
-  const question = getGreatestCommonDivider(number1, number2);
+const getGameData = () => {
+  const number1 = getRandomNumber(1, 100);
+  const number2 = getRandomNumber(1, 100);
+  const correctAnswer = String(getGreatestCommonDivider(number1, number2));
+  const questionText = `${number1} ${number2}`;
 
-  console.log(`Question: ${number1}, ${number2}`);
-
-  return String(question);
+  return { questionText, correctAnswer };
 };
 
-const playGcd = () => playGame(gcdDescription, showQuestion);
+const playGcd = () => playGame(gcdDescription, getGameData);
 
 export default playGcd;

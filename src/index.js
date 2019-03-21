@@ -2,45 +2,47 @@
 
 import readlineSync from 'readline-sync';
 
-export const showGreetings = (gameRules) => {
+const showAnswer = (answer, rightAnswer, userName) => {
+  if (answer === rightAnswer) {
+    console.log('Correct!');
+    return true;
+  }
+  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.
+Let's try again, ${userName}!`);
+  return false;
+};
+
+const playGame = (gameDescription, getGameData) => {
+  const gameIterationsCount = 3;
+  let result = true;
+
   console.log('Welcome to the Brain Games!');
 
-  console.log(gameRules);
+  console.log(gameDescription);
 
   const userName = readlineSync.question('May I have your name? ');
 
   console.log(`Hello, ${userName}\n`);
 
-  return userName;
-};
+  for (let i = 0; i < gameIterationsCount; i += 1) {
+    const gameData = getGameData();
 
-const showAnswer = (answer, question, userName) => {
-  if (answer === question) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${question}'.
-Let's try again, ${userName}!`);
-  return false;
-};
+    console.log(`Question: ${gameData.questionText}`);
 
-const playGame = (gameRules, showQuestion) => {
-  const gameIterationsCount = 3;
-  const userName = showGreetings(gameRules);
-  let result = true;
-  let counter = 0;
-
-  do {
-    const question = showQuestion();
     const answer = readlineSync.question('Your answer: ');
-    result = showAnswer(answer, question, userName);
+    const rightAnswer = gameData.correctAnswer;
 
-    counter += 1;
+    if (answer === 'exit' || answer === 'quit') {
+      console.log(`Goodbye, ${userName}!`);
+      return;
+    }
+
+    result = showAnswer(answer, rightAnswer, userName);
 
     if (!result) {
       return;
     }
-  } while (counter < gameIterationsCount);
+  }
 
   console.log(`Congratulatons, ${userName}!`);
 };
