@@ -15,3 +15,7 @@ It's package of mathematics-based mini-games.
 # how to start and play "brain-calc" game
 
 <a href="https://asciinema.org/a/rXQswVomXsv0PodpohYzaqiqM" target="_blank"><img src="https://asciinema.org/a/rXQswVomXsv0PodpohYzaqiqM.svg" width="500" height="300" /></a>
+
+# how to start and play "brain-gcd" game
+
+<a href="https://asciinema.org/a/FDsId0GbogPNMZY9uC8XuWDuw" target="_blank"><img src="https://asciinema.org/a/FDsId0GbogPNMZY9uC8XuWDuw.svg" width="500" height="300" /></a>
