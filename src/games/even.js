@@ -1,26 +1,23 @@
 // brain-even game logic
 
-import playGame, { getRandomNumber } from '..';
+import playGame from '..';
+import getRandomNumber from '../utils';
 
 const isEven = num => num % 2 === 0;
 
-const evenRules = 'Answer "yes" if number even otherwise answer "no"\n';
+const evenDescription = 'Answer "yes" if number even otherwise answer "no"\n';
 
 const showQuestion = () => {
-  const number = getRandomNumber(100);
+  const question = getRandomNumber(100);
 
-  console.log(`Question: ${number}`);
+  console.log(`Question: ${question}`);
 
-  return number;
-};
-
-const getCorrectAnswer = (num) => {
-  if (isEven(num)) {
+  if (isEven(question)) {
     return 'yes';
   }
   return 'no';
 };
 
-const playEven = () => playGame(evenRules, showQuestion, getCorrectAnswer);
+const playEven = () => playGame(evenDescription, showQuestion);
 
 export default playEven;
