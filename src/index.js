@@ -2,6 +2,8 @@
 
 import readlineSync from 'readline-sync';
 
+export const getRandomNumber = range => Math.floor(Math.random() * range + 1);
+
 export const showGreetings = (gameRules) => {
   console.log('Welcome to the Brain Games!');
 

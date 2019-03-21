@@ -2,8 +2,16 @@
 
 # What is brain-games?
 
-It's package of mini-games.
+It's package of mathematics-based mini-games.
 
-# brain-games setup and start "brain-even" game
+# how to install brain-games-v441
 
-<a href="https://asciinema.org/a/WS1kgtWemIUW0f0gY0XIp4b8g" target="_blank"><img src="https://asciinema.org/a/WS1kgtWemIUW0f0gY0XIp4b8g.svg" /></a>
+<a href="https://asciinema.org/a/oS7vcMKnaZJtju8hyCx42ELN6" target="_blank"><img src="https://asciinema.org/a/oS7vcMKnaZJtju8hyCx42ELN6.svg" width="500" height="300" /></a>
+
+# how to start and play "brain-even" game
+
+<a href="https://asciinema.org/a/ZKHFRZm7KUD2YIJ2rYLE42Bc5" target="_blank"><img src="https://asciinema.org/a/ZKHFRZm7KUD2YIJ2rYLE42Bc5.svg" width="500" height="300" /></a>
+
+# how to start and play "brain-calc" game
+
+<a href="https://asciinema.org/a/rXQswVomXsv0PodpohYzaqiqM" target="_blank"><img src="https://asciinema.org/a/rXQswVomXsv0PodpohYzaqiqM.svg" width="500" height="300" /></a>

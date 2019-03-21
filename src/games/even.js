@@ -1,15 +1,13 @@
 // brain-even game logic
 
-import playGame from '..';
-
-const getRandomNumber = () => Math.floor(Math.random() * 100 + 1);
+import playGame, { getRandomNumber } from '..';
 
 const isParity = num => num % 2 === 0;
 
 const evenRules = 'Answer "yes" if number even otherwise answer "no"\n';
 
 const showQuestion = () => {
-  const number = getRandomNumber();
+  const number = getRandomNumber(100);
 
   console.log(`Question: ${number}`);
 
