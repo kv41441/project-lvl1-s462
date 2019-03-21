@@ -27,21 +27,23 @@ Let's try again, ${userName}!`);
 const playGame = (gameRules, showQuestion, getCorrectAnswer) => {
   const gameIterationsCount = 3;
   const userName = showGreetings(gameRules);
+  let result = true;
+  let counter = 0;
 
-  for (let i = 1, result = true; i <= gameIterationsCount; i += 1) {
-    if (result) {
-      const question = showQuestion();
-      const answer = readlineSync.question('Your answer: ');
-      const rightAnswer = getCorrectAnswer(question);
-      result = showAnswer(answer, rightAnswer, userName);
-    } else {
-      break;
+  do {
+    const question = showQuestion();
+    const answer = readlineSync.question('Your answer: ');
+    const rightAnswer = getCorrectAnswer(question);
+    result = showAnswer(answer, rightAnswer, userName);
+
+    counter += 1;
+
+    if (!result) {
+      return;
     }
-    // Будет переделано через return
-    if (i === gameIterationsCount && result) {
-      console.log(`Congratulatons, ${userName}!`);
-    }
-  }
+  } while (counter < gameIterationsCount);
+
+  console.log(`Congratulatons, ${userName}!`);
 };
 
 export default playGame;
