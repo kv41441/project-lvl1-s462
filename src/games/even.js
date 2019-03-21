@@ -2,7 +2,7 @@
 
 import playGame, { getRandomNumber } from '..';
 
-const isParity = num => num % 2 === 0;
+const isEven = num => num % 2 === 0;
 
 const evenRules = 'Answer "yes" if number even otherwise answer "no"\n';
 
@@ -15,7 +15,7 @@ const showQuestion = () => {
 };
 
 const getCorrectAnswer = (num) => {
-  if (isParity(num)) {
+  if (isEven(num)) {
     return 'yes';
   }
   return 'no';
