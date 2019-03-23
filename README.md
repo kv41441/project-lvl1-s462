@@ -23,3 +23,7 @@ It's package of mathematics-based mini-games.
 # how to start and play "progression" game
 
 <a href="https://asciinema.org/a/yyJmv3OjytvI7D7CvlrZeQlgp" target="_blank"><img src="https://asciinema.org/a/yyJmv3OjytvI7D7CvlrZeQlgp.svg" width="500" height="300" /></a>
+
+# how to start and play "prime" game
+
+<a href="https://asciinema.org/a/iP7EtUnbGhAOd0O9QVpjxkl8r" target="_blank"><img src="https://asciinema.org/a/iP7EtUnbGhAOd0O9QVpjxkl8r.svg" width="500" height="300" /></a>
