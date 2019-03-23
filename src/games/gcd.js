@@ -3,7 +3,7 @@
 import playGame from '..';
 import getRandomNumber from '../utils';
 
-const gcdDescription = 'Find the greatest common divisor of given numbers.\n';
+const gameDescription = 'Find the greatest common divisor of given numbers.\n';
 
 const getGreatestCommonDivider = (num1, num2) => {
   let number1 = num1;
@@ -20,7 +20,7 @@ const getGreatestCommonDivider = (num1, num2) => {
   return number1 + number2;
 };
 
-const getGameData = () => {
+const generateGameData = () => {
   const number1 = getRandomNumber(1, 100);
   const number2 = getRandomNumber(1, 100);
   const correctAnswer = String(getGreatestCommonDivider(number1, number2));
@@ -29,6 +29,4 @@ const getGameData = () => {
   return { questionText, correctAnswer };
 };
 
-const playGcd = () => playGame(gcdDescription, getGameData);
-
-export default playGcd;
+export default () => playGame(gameDescription, generateGameData);

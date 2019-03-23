@@ -3,7 +3,7 @@
 import playGame from '..';
 import getRandomNumber from '../utils';
 
-const calcDescription = 'What is the result of the expression?\n';
+const gameDescription = 'What is the result of the expression?\n';
 
 const calculator = {
   '+': (num1, num2) => num1 + num2,
@@ -11,7 +11,7 @@ const calculator = {
   '*': (num1, num2) => num1 * num2,
 };
 
-const getGameData = () => {
+const generateGameData = () => {
   const number1 = getRandomNumber(1, 100);
   const number2 = getRandomNumber(1, 100);
   const randomOperation = getRandomNumber(0, 2);
@@ -26,6 +26,4 @@ const getGameData = () => {
   return { questionText, correctAnswer };
 };
 
-const playCalc = () => playGame(calcDescription, getGameData);
-
-export default playCalc;
+export default () => playGame(gameDescription, generateGameData);
