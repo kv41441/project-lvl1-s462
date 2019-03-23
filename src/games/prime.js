@@ -1,12 +1,12 @@
 // brain-prime game logic
 
-import playGame from '..';
+/* import playGame from '..';
 import getRandomNumber from '../utils';
 
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
 
 const isSimple = (number) => {
-  
+
 };
 
 const generateGameData = () => {
@@ -19,4 +19,4 @@ const generateGameData = () => {
 
 const playProgression = () => playGame(gameDescription, generateGameData);
 
-export default playProgression;
+export default playProgression; */
