@@ -5,32 +5,23 @@ import getRandomNumber from '../utils';
 
 const calcDescription = 'What is the result of the expression?\n';
 
+const calculator = {
+  '+': (num1, num2) => num1 + num2,
+  '-': (num1, num2) => num1 - num2,
+  '*': (num1, num2) => num1 * num2,
+};
+
 const getGameData = () => {
   const number1 = getRandomNumber(1, 100);
   const number2 = getRandomNumber(1, 100);
   const randomOperation = getRandomNumber(0, 2);
   const operations = ['+', '-', '*'];
-  const currentOperation = operations[randomOperation];
-  let answer = 0;
+  const operation = operations[randomOperation];
 
-  switch (currentOperation) {
-    case '+':
-      answer = number1 + number2;
-      break;
-
-    case '-':
-      answer = number1 - number2;
-      break;
-
-    case '*':
-      answer = number1 * number2;
-      break;
-
-    default: break;
-  }
+  const answer = calculator[operation](number1, number2);
 
   const correctAnswer = String(answer);
-  const questionText = `${number1} ${currentOperation} ${number2}`;
+  const questionText = `${number1} ${operation} ${number2}`;
 
   return { questionText, correctAnswer };
 };

@@ -2,16 +2,6 @@
 
 import readlineSync from 'readline-sync';
 
-const showAnswer = (answer, rightAnswer, userName) => {
-  if (answer === rightAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.
-Let's try again, ${userName}!`);
-  return false;
-};
-
 const playGame = (gameDescription, getGameData) => {
   const gameIterationsCount = 3;
   let result = true;
@@ -37,7 +27,14 @@ const playGame = (gameDescription, getGameData) => {
       return;
     }
 
-    result = showAnswer(answer, rightAnswer, userName);
+    if (answer === rightAnswer) {
+      console.log('Correct!');
+      result = true;
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.
+Let's try again, ${userName}!`);
+      result = false;
+    }
 
     if (!result) {
       return;

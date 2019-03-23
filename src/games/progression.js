@@ -6,12 +6,12 @@ import getRandomNumber from '../utils';
 const progressionDescription = 'What number is missing in the progression?\n';
 
 const getProgression = () => {
-  const progressionStep = getRandomNumber(1, 5);
-  const firstNumber = getRandomNumber(1, 50);
-  const numbersCount = firstNumber + progressionStep * 10;
+  const progressionStep = getRandomNumber(1, 10);
+  const progressionBegin = getRandomNumber(1, 50);
+  const progressionEnd = progressionBegin + progressionStep * 10;
   const progression = [];
 
-  for (let i = firstNumber, j = 0; i < numbersCount; i += progressionStep, j += 1) {
+  for (let i = progressionBegin, j = 0; i < progressionEnd; i += progressionStep, j += 1) {
     progression[j] = i;
   }
 
@@ -20,7 +20,9 @@ const getProgression = () => {
 // недоделка
 const getGameData = () => {
   const progression = getProgression();
-  const correctAnswer = String(progression[0]);
+  const randomElement = getRandomNumber(0, progression.length - 1);
+  const correctAnswer = String(progression[randomElement]);
+  progression.splice(randomElement, 1, '..');
   const questionText = `${progression.join(' ')}`;
 
   return { questionText, correctAnswer };
