@@ -8,14 +8,18 @@ It's package of mathematics-based mini-games.
 
 <a href="https://asciinema.org/a/oS7vcMKnaZJtju8hyCx42ELN6" target="_blank"><img src="https://asciinema.org/a/oS7vcMKnaZJtju8hyCx42ELN6.svg" width="500" height="300" /></a>
 
-# how to start and play "brain-even" game
+# how to start and play "even" game
 
 <a href="https://asciinema.org/a/ZKHFRZm7KUD2YIJ2rYLE42Bc5" target="_blank"><img src="https://asciinema.org/a/ZKHFRZm7KUD2YIJ2rYLE42Bc5.svg" width="500" height="300" /></a>
 
-# how to start and play "brain-calc" game
+# how to start and play "calc" game
 
 <a href="https://asciinema.org/a/rXQswVomXsv0PodpohYzaqiqM" target="_blank"><img src="https://asciinema.org/a/rXQswVomXsv0PodpohYzaqiqM.svg" width="500" height="300" /></a>
 
-# how to start and play "brain-gcd" game
+# how to start and play "gcd" game
 
 <a href="https://asciinema.org/a/FDsId0GbogPNMZY9uC8XuWDuw" target="_blank"><img src="https://asciinema.org/a/FDsId0GbogPNMZY9uC8XuWDuw.svg" width="500" height="300" /></a>
+
+# how to start and play "progression" game
+
+<a href="https://asciinema.org/a/yyJmv3OjytvI7D7CvlrZeQlgp" target="_blank"><img src="https://asciinema.org/a/yyJmv3OjytvI7D7CvlrZeQlgp.svg" width="500" height="300" /></a>
