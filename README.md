@@ -6,7 +6,7 @@ It's package of mathematics-based mini-games.
 
 # how to install brain-games-v441
 
-<a href="https://asciinema.org/a/oS7vcMKnaZJtju8hyCx42ELN6" target="_blank"><img src="https://asciinema.org/a/oS7vcMKnaZJtju8hyCx42ELN6.svg" width="500" height="300" /></a>
+<a href="https://asciinema.org/a/FSY4vXR3rDhhc0kQKD8nukEib" target="_blank"><img src="https://asciinema.org/a/FSY4vXR3rDhhc0kQKD8nukEib.svg" width="500" height="300" /></a>
 
 # how to start and play "even" game
 
