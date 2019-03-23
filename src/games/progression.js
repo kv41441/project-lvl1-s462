@@ -1,18 +1,16 @@
-// brain-progression game logic
-
 import playGame from '..';
 import getRandomNumber from '../utils';
 
-const gameDescription = 'What number is missing in the progression?\n';
+const gameDescription = 'What number is missing in the progression?';
 
 const getProgression = () => {
   const progression = [];
-  const progressionBegin = getRandomNumber(1, 50);
-  const progressionStep = getRandomNumber(1, 10);
-  const progressionLength = 10;
+  const begin = getRandomNumber(1, 50);
+  const step = getRandomNumber(1, 10);
+  const length = 10;
 
-  for (let i = 0; i < progressionLength; i += 1) {
-    progression.push(progressionBegin + progressionStep * i);
+  for (let i = 0; i < length; i += 1) {
+    progression.push(begin + step * i);
   }
 
   return progression;
@@ -20,12 +18,12 @@ const getProgression = () => {
 
 const generateGameData = () => {
   const progression = getProgression();
-  const randomElement = getRandomNumber(0, progression.length - 1);
-  const correctAnswer = String(progression[randomElement]);
-  progression.splice(randomElement, 1, '..');
-  const questionText = `${progression.join(' ')}`;
+  const hiddenElementIndex = getRandomNumber(0, progression.length - 1);
+  const correctAnswer = String(progression[hiddenElementIndex]);
+  progression.splice(hiddenElementIndex, 1, '..');
+  const question = progression.join(' ').toString();
 
-  return { questionText, correctAnswer };
+  return { question, correctAnswer };
 };
 
 export default () => playGame(gameDescription, generateGameData);

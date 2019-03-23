@@ -1,9 +1,7 @@
-// brain-calc game logic
-
 import playGame from '..';
 import getRandomNumber from '../utils';
 
-const gameDescription = 'What is the result of the expression?\n';
+const gameDescription = 'What is the result of the expression?';
 
 const calculator = {
   '+': (num1, num2) => num1 + num2,
@@ -21,9 +19,9 @@ const generateGameData = () => {
   const answer = calculator[operation](number1, number2);
 
   const correctAnswer = String(answer);
-  const questionText = `${number1} ${operation} ${number2}`;
+  const question = `${number1} ${operation} ${number2}`;
 
-  return { questionText, correctAnswer };
+  return { question, correctAnswer };
 };
 
 export default () => playGame(gameDescription, generateGameData);

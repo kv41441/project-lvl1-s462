@@ -2,35 +2,29 @@
 
 import readlineSync from 'readline-sync';
 
-const playGame = (gameDescription, generateGameData) => {
-  const gameIterationsCount = 3;
+const gameIterationsCount = 3;
 
+const playGame = (gameDescription, generateGameData) => {
   console.log('Welcome to the Brain Games!');
 
-  console.log(gameDescription);
+  console.log(`${gameDescription}\n`);
 
   const userName = readlineSync.question('May I have your name? ');
 
   console.log(`Hello, ${userName}\n`);
 
   for (let i = 0; i < gameIterationsCount; i += 1) {
-    const gameData = generateGameData();
+    const { question, correctAnswer } = generateGameData();
 
-    console.log(`Question: ${gameData.questionText}`);
+    console.log(`Question: ${question}`);
 
     const answer = readlineSync.question('Your answer: ');
-    const rightAnswer = gameData.correctAnswer;
-    // Cкрытое поведение (с) убрать или сделать открытым (описать в README)?
-    if (answer === 'exit' || answer === 'quit') {
-      console.log(`Goodbye, ${userName}!`);
-      return;
-    }
 
-    if (answer === rightAnswer) {
+    if (answer === correctAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.
-Let's try again, ${userName}!`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }

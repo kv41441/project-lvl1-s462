@@ -1,9 +1,7 @@
-// brain-gcd game logic
-
 import playGame from '..';
 import getRandomNumber from '../utils';
 
-const gameDescription = 'Find the greatest common divisor of given numbers.\n';
+const gameDescription = 'Find the greatest common divisor of given numbers.';
 
 const getGreatestCommonDivider = (num1, num2) => {
   let number1 = num1;
@@ -24,9 +22,9 @@ const generateGameData = () => {
   const number1 = getRandomNumber(1, 100);
   const number2 = getRandomNumber(1, 100);
   const correctAnswer = String(getGreatestCommonDivider(number1, number2));
-  const questionText = `${number1} ${number2}`;
+  const question = `${number1} ${number2}`;
 
-  return { questionText, correctAnswer };
+  return { question, correctAnswer };
 };
 
 export default () => playGame(gameDescription, generateGameData);

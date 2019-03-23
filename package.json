@@ -1,6 +1,6 @@
 {
   "name": "brain-games-v441",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "The first project of the Front-end JS Programmer profession at Hexlet.",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
