@@ -3,7 +3,9 @@ import getRandomNumber from '../utils';
 
 const gameDescription = 'What is the result of the expression?';
 
-const calculator = {
+const operators = ['+', '-', '*'];
+
+const operations = {
   '+': (num1, num2) => num1 + num2,
   '-': (num1, num2) => num1 - num2,
   '*': (num1, num2) => num1 * num2,
@@ -12,14 +14,14 @@ const calculator = {
 const generateGameData = () => {
   const number1 = getRandomNumber(1, 100);
   const number2 = getRandomNumber(1, 100);
-  const randomOperation = getRandomNumber(0, 2);
-  const operations = ['+', '-', '*'];
-  const operation = operations[randomOperation];
+  const operatorsCount = 3;
+  const randomOperator = getRandomNumber(0, operatorsCount - 1);
+  const operator = operators[randomOperator];
 
-  const answer = calculator[operation](number1, number2);
+  const answer = operations[operator](number1, number2);
 
   const correctAnswer = String(answer);
-  const question = `${number1} ${operation} ${number2}`;
+  const question = `${number1} ${operator} ${number2}`;
 
   return { question, correctAnswer };
 };

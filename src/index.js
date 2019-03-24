@@ -1,8 +1,6 @@
-// Engine of all package's games
-
 import readlineSync from 'readline-sync';
 
-const gameIterationsCount = 3;
+const countGameIterations = 3;
 
 const playGame = (gameDescription, generateGameData) => {
   console.log('Welcome to the Brain Games!');
@@ -13,7 +11,7 @@ const playGame = (gameDescription, generateGameData) => {
 
   console.log(`Hello, ${userName}\n`);
 
-  for (let i = 0; i < gameIterationsCount; i += 1) {
+  for (let i = 0; i < countGameIterations; i += 1) {
     const { question, correctAnswer } = generateGameData();
 
     console.log(`Question: ${question}`);
