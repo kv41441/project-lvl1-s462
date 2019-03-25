@@ -14,9 +14,7 @@ const operations = {
 const generateGameData = () => {
   const number1 = getRandomNumber(1, 100);
   const number2 = getRandomNumber(1, 100);
-  const operatorsCount = 3;
-  const randomOperator = getRandomNumber(0, operatorsCount - 1);
-  const operator = operators[randomOperator];
+  const operator = operators[getRandomNumber(0, operators.length - 1)];
 
   const answer = operations[operator](number1, number2);
 
