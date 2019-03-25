@@ -21,6 +21,7 @@ const getGreatestCommonDivider = (num1, num2) => {
 const generateGameData = () => {
   const number1 = getRandomNumber(1, 100);
   const number2 = getRandomNumber(1, 100);
+
   const correctAnswer = String(getGreatestCommonDivider(number1, number2));
   const question = `${number1} ${number2}`;
 

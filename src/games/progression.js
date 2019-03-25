@@ -20,6 +20,7 @@ const generateGameData = () => {
   const step = getRandomNumber(1, 10);
   const progression = getProgression(begin, step);
   const hiddenElementIndex = getRandomNumber(0, progression.length - 1);
+
   const correctAnswer = String(progression[hiddenElementIndex]);
   progression.splice(hiddenElementIndex, 1, '..');
   const question = progression.join(' ').toString();
