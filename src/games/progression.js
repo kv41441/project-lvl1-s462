@@ -23,7 +23,7 @@ const generateGameData = () => {
 
   const correctAnswer = String(progression[hiddenElementIndex]);
   progression.splice(hiddenElementIndex, 1, '..');
-  const question = progression.join(' ').toString();
+  const question = progression.join(' ');
 
   return { question, correctAnswer };
 };
